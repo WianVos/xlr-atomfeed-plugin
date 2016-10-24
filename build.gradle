@@ -27,16 +27,16 @@ apply plugin: 'net.saliman.properties'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'co.riiid.gradle'
-println 'build/libs/xlr-hipchat-plugin-${getVersionName}.jar'
+println 'build/libs/xlr-atomfeed-plugin-${getVersionName}.jar'
 github {
     owner = 'wianvos'
-    repo = 'xlr-hipchat-plugin'
+    repo = 'xlr-atomfeed-plugin'
     token = "$github_token"
     tagName = getVersionName()
     targetCommitish = 'master'
     name = getVersionName()
     assets = [
-            "build/libs/xlr-hipchat-plugin-"+getVersionName()+".jar"
+            "build/libs/xlr-atomfeed-plugin-"+getVersionName()+".jar"
     ]
 }
 
