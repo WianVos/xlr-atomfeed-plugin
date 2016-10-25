@@ -9,15 +9,15 @@ if preRelease:
     packageType = "PR" #PR= PreRelease and RC = ReleaseCandidate
 
 
-print user
-print password
+
+
+
 
 
 try:
-    response = requests.get(nugetURL,
-                            auth=requests.auth.HTTPBasicAuth(
-                              user,
-                              password),verify=False)
+    response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False)
+
+
 except Exception:
     print "unable to get info from feed"
     sys.exit[1]
