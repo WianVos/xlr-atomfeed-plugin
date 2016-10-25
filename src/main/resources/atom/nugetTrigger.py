@@ -14,8 +14,8 @@ if preRelease:
 
 
 
-
-response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False)
+print "trying to get a response from nuget"
+response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False, timeout=100)
 print response.status_code
 response.raise_for_status()
 
