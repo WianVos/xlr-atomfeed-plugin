@@ -14,13 +14,11 @@ if preRelease:
 
 
 
-try:
-    response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False)
 
+response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False)
+print response.status_code
+response.raise_for_status()
 
-except Exception:
-    print "unable to get info from feed"
-    sys.exit[1]
 
 
 # try to open from URL
