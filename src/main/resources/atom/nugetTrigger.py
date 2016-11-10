@@ -15,7 +15,11 @@ if preRelease:
 
 
 print "trying to get a response from nuget"
-response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False, timeout=100)
+if proxy_string != "":
+    print "using proxy %s" % proxy_string
+    response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False, timeout=100, proxies={proxy_string})
+else:
+    response = requests.get(nugetURL, auth=requests.auth.HTTPBasicAuth(user, password),verify=False, timeout=100)
 print response.status_code
 response.raise_for_status()
 

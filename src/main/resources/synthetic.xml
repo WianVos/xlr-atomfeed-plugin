@@ -11,6 +11,7 @@
 
   <type type="atom.nugetTrigger" extends="xlrelease.ReleaseTrigger" >
     <property name="feedUrl" category="input" required="true" />
+    <property name="proxy_string" category="input" required="false" />
     <property name="user" category="input" required="true" />
     <property name="password" category="input" required="true" kind="string" password="true" />
     <property name="packageName" category="input" required="true" />
